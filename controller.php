@@ -1,5 +1,6 @@
 <?php 
-    
+     
+     session_start();
 
    //capturando os dados da url
     //ex.: admin/departamento/cadastrar/listar
@@ -14,24 +15,33 @@
     switch($router){
     //router = departamentolistar
 
+            // PARTE DO SERVIÇO <>
         case 'servicocadastrar':
-           
+            \LOJA\incluedes\Seguranca::restritoAdm();
+
             $obj = new \LOJA\API\ServicoCadastrar;
             $msg = $obj->msg;
             $view = "form-servico.php";
             break;
 
         case 'servicolistar':
+
+            \LOJA\incluedes\Seguranca::restritoAdm();
+
             $obj = new \LOJA\API\ServicoListar;
             $lista = $obj->lista;
             $view = "lista-servico.php";
             break;
 
         case 'departamentovizualizar':
+            
             $obj = new \LOJA\API\DepartamentoVizualizar;
             $departamento = $obj->dados;
             $view = "vizualizar-departamentp-id.php";
             break;
+            //^^ PARTE DO SERVIÇO  ^^ 
+           
+            // PARTE DO CLIENTE <>
 
         case 'clientelistar':
             $obj = new \LOJA\API\ClienteListar;
@@ -50,8 +60,10 @@
             $cliente = $obj->dados;
             $view = "vizualizar-cliente-id.php";
             break;
+
+            // PARTE DO CLIENTE ^^ 
         
-        
+          // PARTE DO PRODUTO <> 
         case 'produtocadastrar':
             $obj = new \LOJA\API\ProdutoCadastrar;
             $msg = $obj->msg;
@@ -61,12 +73,14 @@
 
             $view = "form-produto.php";
             break;
+
+            case 'produtolistar':
+                $obj = new \LOJA\API\ProdutoListar;
+                $lista = $obj->lista;
+                $view = "lista-produto.php";
+                break;
             
-        case 'usuariocadastrar':
-            $obj = new \LOJA\API\UsuarioCadastrar;
-            $msg = $obj->msg;
-            $view = "form-usuario.php";
-            break;
+            // PARTE DO PRODUTO  ^^
 
         case 'usuariolistar':
             $obj = new \LOJA\API\UsuarioListar;
@@ -79,11 +93,7 @@
             $view = "vizualiza-usuario-id.php";
             break;
 
-            case 'produtolistar':
-            $obj = new \LOJA\API\ProdutoListar;
-            $lista = $obj->lista;
-            $view = "lista-produto.php";
-            break;
+           
 
         case 'fornecedorcadastrar':
             include "API/cadastrar-fornecedor.php";
@@ -94,6 +104,34 @@
             include "API/lista-fornecedor.php";
             $view = "lista-fornecedor.php";
             break;
+
+            // PARTE DOS ADMIN <>
+        case 'usuariocadastrar':
+             $obj = new \LOJA\API\UsuarioCadastrar;
+            $msg = $obj->msg;
+           
+             $view = "form-usuario.php";
+             break;
+
+        case 'loginadm':
+            $obj = new \LOJA\API\UsuarioLogar;
+            $msg = $obj->msg;
+            $view = "form-adm.php";
+            break;
+            
+        case 'paineladm':
+            $obj = new \LOJA\API\UsuarioLogar;
+            
+            $view = "painel-adm.php";
+            break;
+
+        case 'painellogoff':
+                $obj = new \LOJA\API\UsuarioLogoff;
+                
+                $view = "form-adm.php";
+                break;
+            
+            // PARTE DOS ADMIN ^^
 
        
         default:
