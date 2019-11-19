@@ -1,9 +1,12 @@
 <?php
 
-    require_once  'model/conexao.php';
-    require_once  'model/fornecedor.class.php';
-    require_once  'dao/fornecedor.dao.php';
+namespace LOJA\API;
+use LOJA\Model\Fornecedor;
+use LOJA\DAO\DAOFornecedor;
 
+class FornecedorCadastrar{
+    public $msg;
+    function __construct(){
     if($_POST){
 
         try{
@@ -15,11 +18,13 @@
            
 
             $DAO = new DAOFornecedor();
-            $msg = $DAO->cadastrar($obj);
+            $this->msg = $DAO->cadastrar($obj);
 
         }catch(Exception $e){
-            $msg = $e->getMessage();
+            $this->msg = $e->getMessage();
         }
     }
+}
+}
 
 ?>

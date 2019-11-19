@@ -2,7 +2,7 @@
 
 <h1>CADASTRO DO ADMIN</h1>
     
-<form class="form-horizontal" method="post" action="adm">
+<form class="form-horizontal" method="post" action="cadastrar">
 <fieldset>
 
 <!-- Form Name -->

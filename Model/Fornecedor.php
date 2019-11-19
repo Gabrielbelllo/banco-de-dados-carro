@@ -1,4 +1,5 @@
 <?php
+namespace LOJA\Model;
     class Fornecedor{
        private $id;
        private $nome;

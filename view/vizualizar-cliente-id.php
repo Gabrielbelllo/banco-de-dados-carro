@@ -1,5 +1,5 @@
 <?php include "view/header.php";?>
-<h1>CADASTRO Da Loja</h1>
+<h1>Cliente Vizualizar(ID)</h1>
     
 <form class="form-horizontal" method="post" action="cadastrar">
 <fieldset>

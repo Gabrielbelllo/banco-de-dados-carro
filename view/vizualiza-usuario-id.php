@@ -1,7 +1,7 @@
 <?php include "view/header.php";?>
 <h1>USUARIO</h1>
     
-<form class="form-horizontal" method="post" action="ctrl-cadastro-usuario.php">
+<form class="form-horizontal" method="post" action="vizualizar">
 <fieldset>
 
 <!-- Form Name -->
@@ -32,7 +32,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Cadastrar ADMIN</button>
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">ATUALIZAR ADMIN</button>
   </div>
 </div>
 

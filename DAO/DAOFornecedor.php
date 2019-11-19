@@ -1,5 +1,7 @@
 <?php
-
+namespace LOJA\DAO;
+use LOJA\Model\Conexao;
+use LOJA\Model\Fornecedor;
 class DAOFornecedor{
     public function cadastrar(Fornecedor $fornecedor){
         $sql = "INSERT INTO fornecedor
@@ -22,7 +24,7 @@ class DAOFornecedor{
 
         $lista = array();
 
-        while($fornecedor = $con->fetch(PDO::FETCH_ASSOC)){
+        while($fornecedor = $con->fetch(\PDO::FETCH_ASSOC)){
             $lista[] = $fornecedor;
         }
         

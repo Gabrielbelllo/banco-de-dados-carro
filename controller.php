@@ -26,36 +26,38 @@
 
         case 'servicolistar':
 
-            \LOJA\incluedes\Seguranca::restritoAdm();
-
             $obj = new \LOJA\API\ServicoListar;
             $lista = $obj->lista;
             $view = "lista-servico.php";
             break;
 
-        case 'departamentovizualizar':
-            
-            $obj = new \LOJA\API\DepartamentoVizualizar;
-            $departamento = $obj->dados;
-            $view = "vizualizar-departamentp-id.php";
+        case 'servicovizualizar':
+              
+            \LOJA\incluedes\Seguranca::restritoAdm();
+            $obj = new \LOJA\API\ServicoVizualizar;
+            $servico = $obj->dados;
+            $view = "vizualizar-servico-id.php";
             break;
             //^^ PARTE DO SERVIÇO  ^^ 
            
             // PARTE DO CLIENTE <>
 
         case 'clientelistar':
+            \LOJA\incluedes\Seguranca::restritoAdm();
             $obj = new \LOJA\API\ClienteListar;
             $lista = $obj->lista;
             $view = "lista-cliente.php";
             break;
             
         case 'clientecadastrar':
+            \LOJA\incluedes\Seguranca::restritoAdm();
             $obj = new \LOJA\API\ClienteCadastrar;
             $msg = $obj->msg;
             $view = "form-cliente.php";
             break;
 
         case 'clientevizualizar':
+            \LOJA\incluedes\Seguranca::restritoAdm();
             $obj = new \LOJA\API\ClienteVizualizar;
             $cliente = $obj->dados;
             $view = "vizualizar-cliente-id.php";
@@ -65,6 +67,7 @@
         
           // PARTE DO PRODUTO <> 
         case 'produtocadastrar':
+            \LOJA\incluedes\Seguranca::restritoAdm();
             $obj = new \LOJA\API\ProdutoCadastrar;
             $msg = $obj->msg;
 
@@ -83,32 +86,42 @@
             // PARTE DO PRODUTO  ^^
 
         case 'usuariolistar':
+            \LOJA\incluedes\Seguranca::restritoAdm();
             $obj = new \LOJA\API\UsuarioListar;
             $lista = $obj->lista;
             $view = "lista-usuario.php";
             break;
 
         case 'usuariovizualizar':
-            include "API/buscar-usuario-id.php";
+            \LOJA\incluedes\Seguranca::restritoAdm();
+            $obj = new \LOJA\API\UsuarioVizualizar;
+            $usuario = $obj->dados;
             $view = "vizualiza-usuario-id.php";
             break;
 
            
+            // PARTE DO FORNECEDOR <>
 
         case 'fornecedorcadastrar':
-            include "API/cadastrar-fornecedor.php";
+            \LOJA\incluedes\Seguranca::restritoAdm();
+            $obj = new \LOJA\API\FornecedorCadastrar;
+            $msg = $obj->msg;
             $view = "form-fornecedor.php";
             break;
 
         case 'fornecedorlistar':
-            include "API/lista-fornecedor.php";
+            \LOJA\incluedes\Seguranca::restritoAdm();
+            $obj = new \LOJA\API\FornecedorListar;
+            $lista = $obj->lista;
             $view = "lista-fornecedor.php";
             break;
+            // PARTE DO FORNECEDOR ^^
 
             // PARTE DOS ADMIN <>
         case 'usuariocadastrar':
+            \LOJA\incluedes\Seguranca::restritoAdm();
              $obj = new \LOJA\API\UsuarioCadastrar;
-            $msg = $obj->msg;
+             $msg = $obj->msg;
            
              $view = "form-usuario.php";
              break;
@@ -120,6 +133,7 @@
             break;
             
         case 'paineladm':
+            \LOJA\incluedes\Seguranca::restritoAdm();
             $obj = new \LOJA\API\UsuarioLogar;
             
             $view = "painel-adm.php";

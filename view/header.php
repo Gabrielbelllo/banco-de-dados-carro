@@ -16,7 +16,7 @@
    
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="<?php echo $url;?>/painel/adm"> ADM</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -34,17 +34,18 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="<?php echo $url;?>/cliente/listar">Lista de Clientes</a>
+          <a class="dropdown-item" href="<?php echo $url;?>/cliente/vizualizar/1">Vizualizar Clientes</a>
           <a class="dropdown-item" href="<?php echo $url;?>/cliente/cadastrar">Cadastro de cliente</a>
   
         </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Usuarios
+          ADM
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item " href="ctrl-usuario-lista.php">Lista de usuarios</a>
-          <a class="dropdown-item" href="<?php echo $url;?>/cliente/cadastrar">Cadastro de usuario</a>
+          <a class="dropdown-item " href="<?php echo $url;?>/usuario/listar">Lista de ADM</a>
+          <a class="dropdown-item" href="<?php echo $url;?>/usuario/cadastrar">Cadastro de ADM</a>
          
         </div>
       </li>
@@ -54,6 +55,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item " href="<?php echo $url;?>/servico/listar">Serviço Lista</a>
+          <a class="dropdown-item" href="<?php echo $url;?>/servico/vizualizar/1">Serviço Vizualizar</a>
           <a class="dropdown-item" href="<?php echo $url;?>/servico/cadastrar">Serviço Cadastrar</a>
           
         </div>
@@ -63,13 +65,26 @@
           Produtos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item disabled" href="ctrl-produto-lista.php">Lista dos Produtos</a>
-          <a class="dropdown-item " href="ctrl-cadastro-produto.php">Registrar Produto</a>
+        <a class="dropdown-item " href="<?php echo $url;?>/produto/listar">Lista dos Produtos</a>
+          <a class="dropdown-item " href="<?php echo $url;?>/produto/cadastrar">Registrar Produto</a>
           
           
         </div>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Fornecedor
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item " href="<?php echo $url;?>/fornecedor/listar">Lista dos Fornecedores</a>
+          <a class="dropdown-item " href="<?php echo $url;?>/fornecedor/cadastrar">Registrar Fornecedor</a>
+          
+          
+        </div>
+      </li>
+     
     </ul>
+   
   </div>
   
 </nav>
