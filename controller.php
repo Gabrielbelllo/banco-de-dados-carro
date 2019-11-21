@@ -41,6 +41,11 @@
             //^^ PARTE DO SERVIÇO  ^^ 
            
             // PARTE DO CLIENTE <>
+        case 'logincliente':
+            $obj = new \LOJA\API\ClienteLogar;
+            $msg = $obj->msg;
+            $view = "form-cliente-login.php";
+            break;
 
         case 'clientelistar':
             \LOJA\incluedes\Seguranca::restritoAdm();
@@ -50,7 +55,7 @@
             break;
             
         case 'clientecadastrar':
-            \LOJA\incluedes\Seguranca::restritoAdm();
+     
             $obj = new \LOJA\API\ClienteCadastrar;
             $msg = $obj->msg;
             $view = "form-cliente.php";
@@ -62,6 +67,18 @@
             $cliente = $obj->dados;
             $view = "vizualizar-cliente-id.php";
             break;
+        case 'painelcliente':
+           
+            $obj = new \LOJA\API\ClienteLogar;
+                
+            $view = "painel-cliente.php";
+            break;
+    
+        case 'painellogoff':
+                $obj = new \LOJA\API\ClienteLogoff;
+                    
+                $view = "form-cliente-login.php";
+                break;
 
             // PARTE DO CLIENTE ^^ 
         
@@ -85,19 +102,7 @@
             
             // PARTE DO PRODUTO  ^^
 
-        case 'usuariolistar':
-            \LOJA\incluedes\Seguranca::restritoAdm();
-            $obj = new \LOJA\API\UsuarioListar;
-            $lista = $obj->lista;
-            $view = "lista-usuario.php";
-            break;
-
-        case 'usuariovizualizar':
-            \LOJA\incluedes\Seguranca::restritoAdm();
-            $obj = new \LOJA\API\UsuarioVizualizar;
-            $usuario = $obj->dados;
-            $view = "vizualiza-usuario-id.php";
-            break;
+       
 
            
             // PARTE DO FORNECEDOR <>
@@ -118,6 +123,21 @@
             // PARTE DO FORNECEDOR ^^
 
             // PARTE DOS ADMIN <>
+        case 'usuariolistar':
+              \LOJA\incluedes\Seguranca::restritoAdm();
+             $obj = new \LOJA\API\UsuarioListar;
+             $lista = $obj->lista;
+             $view = "lista-usuario.php";
+             break;
+    
+        case 'usuariovizualizar':
+            \LOJA\incluedes\Seguranca::restritoAdm();
+            $obj = new \LOJA\API\UsuarioVizualizar;
+            $usuario = $obj->dados;
+            $view = "vizualiza-usuario-id.php";
+            break;
+
+
         case 'usuariocadastrar':
             \LOJA\incluedes\Seguranca::restritoAdm();
              $obj = new \LOJA\API\UsuarioCadastrar;

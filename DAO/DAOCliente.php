@@ -48,6 +48,24 @@ class DAOCliente{
         return $cliente;
 
     }
+    public function buscoPorNomeSenha(Cliente $cliente){
+        $sql = "SELECT pk_cliente as id,nome 
+        FROM cliente WHERE nome = :nome AND 
+        senha = :senha";
+        
+        $con = Conexao::getInstance()->prepare($sql);
+        $con->bindValue(":nome", $cliente->getNome());
+        $con->bindValue(":senha", $cliente->getSenha());
+        $con->execute();
+        
+      
+        $cliente = new Cliente();
+        $cliente = $con->fetch(\PDO::FETCH_ASSOC);
+        return $cliente;
+       
+       
+
+    }
 
     }
 
