@@ -65,7 +65,7 @@
             \LOJA\incluedes\Seguranca::restritoAdm();
             $obj = new \LOJA\API\ClienteVizualizar;
             $cliente = $obj->dados;
-            $msg = $obj->msg;
+           
             $view = "vizualizar-cliente-id.php";
             break;
         case 'painelcliente':
