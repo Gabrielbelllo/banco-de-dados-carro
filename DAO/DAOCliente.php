@@ -21,33 +21,6 @@ class DAOCliente{
         return "Cadastrado com sucesso";
 
     }
-    public function listaCliente(){
-        $sql = "SELECT * FROM cliente";
-        $con = Conexao::getInstance()->prepare($sql);
-        $con->execute();
-
-        $lista = array();
-
-        while($cliente = $con->fetch(\PDO::FETCH_ASSOC)){
-            $lista[] = $cliente;
-        }
-        return $lista;
-    }
-
-    public function buscaPorId($id){
-
-        $sql = "SELECT * FROM cliente WHERE pk_cliente = :id";
-        $con = Conexao::getInstance()->prepare($sql);
-        $con->bindValue(":id", $id);
-        $con->execute();
-
-        $cliente = new Cliente();
-
-        $cliente = $con->fetch(\PDO::FETCH_ASSOC);
-        //print_r($cliente);//testa saida 
-        return $cliente;
-
-    }
     public function buscoPorNomeSenha(Cliente $cliente){
         $sql = "SELECT pk_cliente as id,nome 
         FROM cliente WHERE nome = :nome AND 
@@ -66,6 +39,35 @@ class DAOCliente{
        
 
     }
+    public function listaCliente(){
+        $sql = "SELECT * FROM cliente";
+        $con = Conexao::getInstance()->prepare($sql);
+        $con->execute();
+
+        $lista = array();
+
+        while($cliente = $con->fetch(\PDO::FETCH_ASSOC)){
+            $lista[] = $cliente;
+        }
+        return $lista;
+    }
+
+    public function buscaPorId($id){
+
+        $sql = "SELECT * FROM cliente WHERE pk_cliente = :id";
+        $con = Conexao::getInstance()->prepare($sql);
+        $con->bindValue(":id", $id);
+        
+        $con->execute();
+
+        $cliente = new Cliente();
+
+        $cliente = $con->fetch(\PDO::FETCH_ASSOC);
+        //print_r($cliente);//testa saida 
+        return $cliente;
+
+    }
+  
 
     }
 

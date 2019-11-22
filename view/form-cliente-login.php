@@ -8,18 +8,18 @@ SOU CLIENTE</h2>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Nome</label>  
+  <label class="col-md-4 control-label" for="name">Nome</label>  
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="Nome" class="form-control input-md" required="">
+  <input id="nome" name="nome" type="text" placeholder="Nome" class="form-control input-md" required="">
     
   </div>
 </div>
 
 <!-- Password input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="passwordinput">Senha</label>
+  <label class="col-md-4 control-label" for="senha">Senha</label>
   <div class="col-md-4">
-    <input id="passwordinput" name="passwordinput" type="password" placeholder="Senha" class="form-control input-md" required="">
+    <input id="senha" name="senha" type="password" placeholder="Senha" class="form-control input-md" required="">
     
   </div>
 </div>

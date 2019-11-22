@@ -65,6 +65,7 @@
             \LOJA\incluedes\Seguranca::restritoAdm();
             $obj = new \LOJA\API\ClienteVizualizar;
             $cliente = $obj->dados;
+            $msg = $obj->msg;
             $view = "vizualizar-cliente-id.php";
             break;
         case 'painelcliente':
@@ -74,7 +75,7 @@
             $view = "painel-cliente.php";
             break;
     
-        case 'painellogoff':
+        case 'painelclientelogoff':
                 $obj = new \LOJA\API\ClienteLogoff;
                     
                 $view = "form-cliente-login.php";

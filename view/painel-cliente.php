@@ -5,7 +5,7 @@
     <!-- Button trigger modal -->
 
    <p></p>
-    <a class="btn btn-primary" href="http://localhost/carro/painel/logoff">Sair</a>
+    <a class="btn btn-primary" href="http://localhost/carro/painelcliente/logoff">Sair</a>
 
 
   
